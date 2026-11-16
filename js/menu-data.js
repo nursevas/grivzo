@@ -31,6 +31,12 @@ const photo = (id, focus = "") =>
 const crop = (id, x, y, z) => photo(id, `&crop=focalpoint&fp-x=${x}&fp-y=${y}&fp-z=${z}`);
 
 const IMG = {
+  // свои фотографии бургеров
+  cheeseBeef:      "assets/products/cheese-beef.webp",
+  cheeseBeef2x:    "assets/products/cheese-beef-2x.webp",
+  cheeseChicken:   "assets/products/cheese-chicken.webp",
+  cheeseChicken2x: "assets/products/cheese-chicken-2x.webp",
+
   beef:      photo("1568901346375-23c9450c58cd"),
   beef2:     photo("1553979459-d2229ba7433b"),
   beef3:     photo("1594212699903-ec8a3eca50f5"),
@@ -119,10 +125,10 @@ window.GRIVZO_MENU = [
   {
     id: "burgers", title: "Бургеры", nav: "Бургеры",
     items: [
-      { id: "cheese-beef",       name: "Чизбургер говяжий",    price: 1800, img: IMG.beef },
-      { id: "cheese-chicken",    name: "Чизбургер куриный",    price: 1700, img: IMG.chicken },
-      { id: "cheese-beef-2x",    name: "Чизбургер говяжий 2Х", price: 2400, img: IMG.beef2 },
-      { id: "cheese-chicken-2x", name: "Чизбургер куриный 2Х", price: 2300, img: IMG.chicken2 },
+      { id: "cheese-beef",       name: "Чизбургер говяжий",    price: 1800, img: IMG.cheeseBeef },
+      { id: "cheese-chicken",    name: "Чизбургер куриный",    price: 1700, img: IMG.cheeseChicken },
+      { id: "cheese-beef-2x",    name: "Чизбургер говяжий 2Х", price: 2400, img: IMG.cheeseBeef2x },
+      { id: "cheese-chicken-2x", name: "Чизбургер куриный 2Х", price: 2300, img: IMG.cheeseChicken2x },
       { id: "cheese-beef-3x",    name: "Чизбургер говяжий 3Х", price: 3150, img: IMG.beef3 },
       { id: "cheese-chicken-3x", name: "Чизбургер куриный 3Х", price: 3050, img: IMG.chicken3 },
       { id: "cheese-mix",        name: "Чизбургер Микс",       price: 2300, img: IMG.mix },
