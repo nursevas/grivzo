@@ -213,6 +213,9 @@
     if (pills) pills.innerHTML = variantPills(p, getVariant(p, selectedVariant[p.id]).id, true);
   }
 
+  // свои фото (из папки assets/) показываем целиком, без обрезки; фото из интернета — на всю карточку
+  const isOwnPhoto = (p) => String(p.img || "").startsWith("assets/");
+
   // текст для поиска: на обоих языках, чтобы искать можно было и по-русски, и по-казахски
   function searchText(p, s) {
     const kkItem = (MKK.items && MKK.items[p.id]) || {};
@@ -231,7 +234,7 @@
           ${s.items.map((p) => {
             const b = BADGES[p.badge];
             return `<article class="card" data-id="${esc(p.id)}" data-search="${esc(searchText(p, s))}">
-              <div class="card__media" data-open="${esc(p.id)}" role="button" tabindex="0" aria-label="${esc(t("details"))}: ${esc(pName(p))}">
+              <div class="card__media${isOwnPhoto(p) ? " card__media--contain" : ""}" data-open="${esc(p.id)}" role="button" tabindex="0" aria-label="${esc(t("details"))}: ${esc(pName(p))}">
                 ${b ? `<span class="badge ${b.cls}">${esc(t(b.key))}</span>` : ""}
                 <img src="${esc(p.img)}" alt="${esc(pName(p))}" loading="lazy" decoding="async" width="720" height="720">
               </div>
@@ -585,6 +588,7 @@
     if (!p) return;
     const img = $("#pmImg");
     img.src = p.img; img.alt = pName(p);
+    $(".pm__media").classList.toggle("pm__media--contain", isOwnPhoto(p));
     const b = BADGES[p.badge];
     $("#pmBadges").innerHTML = b ? `<span class="badge ${b.cls}">${esc(t(b.key))}</span>` : "";
     $("#pmTitle").textContent = pName(p);

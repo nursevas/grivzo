@@ -829,3 +829,11 @@ a { color: inherit; text-decoration: none; }
   .topbar .cart-btn__sum { display: none; }
   .topbar .cart-btn { padding: 0 12px; }
 }
+
+/* ---------- Собственные фото блюд: показываем целиком, по центру, с воздухом ---------- */
+.card__media--contain, .pm__media--contain { background: #fff; }
+.card__media--contain img, .pm__media--contain img {
+  object-fit: contain;
+  padding: 4% 1%;
+}
+.card:hover .card__media--contain img { transform: scale(1.03); }
