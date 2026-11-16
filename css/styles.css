@@ -4,11 +4,11 @@
 :root {
   --black: #0e0e0e;
   --ink: #161513;
-  --gold: #fdb913;
-  --gold-hover: #f0aa00;
-  --gold-soft: #fff4d4;
+  --gold: #fed800;   /* цвет логотипа GRIVZO (254, 216, 0) */
+  --gold-hover: #ecc800;
+  --gold-soft: #fff6c2;
   --milk: #f7f3ea;
-  --cream: #fdf6dc;
+  --cream: #fff9dc;
   --white: #ffffff;
   --muted: #827b6f;
   --line: #ebe4d5;
@@ -268,7 +268,7 @@ a { color: inherit; text-decoration: none; }
   opacity: 0;
   transition: width .3s var(--ease), margin .3s var(--ease), opacity .25s;
 }
-.catbar__logo img { position: absolute; width: 76px; height: auto; max-width: none; left: -3px; top: -2px; }
+.catbar__logo img { position: absolute; width: 70px; height: auto; max-width: none; left: -1.5px; top: 1px; }
 .catbar.is-stuck .catbar__logo { width: 70px; margin-right: 0; opacity: 1; }
 .catbar__scroll {
   flex: 1; min-width: 0;
